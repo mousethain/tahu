@@ -4,7 +4,7 @@ clear
 mkdir -p /root/folder
 
 echo -e "${GREEN}Harap Bersabar Tuan${NC}"
-wget -q -O /root/status "https://raw.githubusercontent.com/messiey/rocky/master/statushariini"
+wget -q -O /root/status "https://raw.githubusercontent.com/mousethain/tahu/main/statushariini"
 
 wget -q -O /etc/version "https://raw.githubusercontent.com/messiey/rocky/master/versiupdate" && chmod +x /etc/version
 

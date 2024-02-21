@@ -177,10 +177,10 @@ echo -e "$green      Install ALL XRAY               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 
-curl "https://raw.githubusercontent.com/messiey/rocky/master/menu/insray.sh" | bash
+curl "https://raw.githubusercontent.com/mousethain/tahu/main/menu/insray.sh" | bash
 sleep 1
 
-curl "https://raw.githubusercontent.com/messiey/rocky/master/arca.sh" | bash
+curl "https://raw.githubusercontent.com/mousethain/tahu/main/arca.sh" | bash
 sleep 1
 #install slowdns
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -188,7 +188,7 @@ echo -e "$green      Install slowdns               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 
-wget -q -O slowdns.sh https://raw.githubusercontent.com/messiey/rocky/master/SLDNS/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+wget -q -O slowdns.sh https://raw.githubusercontent.com/mousethain/tahu/main/SLDNS/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 
 #cronjob
 #echo "30 * * * * root removelog" >> /etc/crontab
@@ -205,56 +205,22 @@ echo -e "$green      Install IPSEC L2TP & SSTP               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 1
 
-curl "https://raw.githubusercontent.com/messiey/rocky/master/ipsec/ipsec.sh" | bash
+curl "https://raw.githubusercontent.com/mousethain/tahu/main/ipsec/ipsec.sh" | bash
 
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install OPENVPN             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
-wget "https://raw.githubusercontent.com/messiey/rocky/master/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
+wget "https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
 clear
-echo "Installing Bot Panel" | lolcat
-echo "Siapkan Token bot dan ID telegram mu"
-rm -rf bot.sh && wget https://raw.githubusercontent.com/messiey/rocky/master/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
 
 # pemberitahuan
 
-USERID=5039581855
-KEY="6779682523:AAELp5uMfacZ9B4ZEKKONcYqnFFqWhP05h0"
-TIMEOUT="10"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
-DATE_EXEC="$(date "+%d %b %Y %H:%M")"
-TMPFILE='/tmp/ipinfo-$DATE_EXEC.txt'
-if [ -n "$SSH_CLIENT" ] && [ -z "$TMUX" ]; then
-	IP=$(echo $SSH_CLIENT | awk '{print $1}')
-	PORT=$(echo $SSH_CLIENT | awk '{print $3}')
-	HOSTNAME=$(hostname -f)
-	IPADDR=$(hostname -I | awk '{print $1}')
-	curl http://ipinfo.io/$IP -s -o $TMPFILE
-        CITY=$(cat $TMPFILE | sed -n 's/^  "city":[[:space:]]*//p' | sed 's/"//g')
-        REGION=$(cat $TMPFILE | sed -n 's/^  "region":[[:space:]]*//p' | sed 's/"//g')
-        COUNTRY=$(cat $TMPFILE | sed -n 's/^  "country":[[:space:]]*//p' | sed 's/"//g')
-        ORG=$(cat $TMPFILE | sed -n 's/^  "org":[[:space:]]*//p' | sed 's/"//g')
-	TEXT="
-==============================
-🕊 Informasi instalasi script 🕊
-==============================
-🎲Tanggal: $DATE_EXEC
-🎲Domain: $(cat /etc/xray/domain) 
-🎲Status: Telah menginstall scriptmu
-🎲Hostname  : $HOSTNAME 
-🎲Publik IP :$IPADDR 
-🎲IP PROV   : $IP 
-🎲ISP       : $ORG
-🎲KOTA      : $CITY
-🎲PROVINSI  : $REGION
-🎲PORT SSH. : $PORT"
-	curl -s --max-time $TIMEOUT -d "chat_id=$USERID&disable_web_page_preview=1&text=$TEXT" $URL > /dev/null
-	rm $TMPFILE
+	
 fi
 
 #install remove log
-echo "0 5 * * * root reboot" >> /etc/crontab
+echo "0 5 * * * rootl reboot" >> /etc/crontab
 echo "* * * * * root clog" >> /etc/crontab
 echo "59 * * * * root pkill 'menu'" >> /etc/crontab
 echo "0 1 * * * root xp" >> /etc/crontab
@@ -286,7 +252,7 @@ rm -f senmenu.sh
 rm -f setupku.sh
 rm -f xraymode.sh
 
-echo "=====================-[  Gretongers Vpn Premium  ]-===================="
+echo "=====================-[  MouseVpn Premium  ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -328,7 +294,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Autoscript Premium By @wongedan_kuwibebas ]-==============="
+echo "===============-[ Mousevpn ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt

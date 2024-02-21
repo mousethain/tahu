@@ -44,8 +44,8 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/Zeastore/test/main"
-export Server1_URL="raw.githubusercontent.com/Zeastore/limit/main"
+export Server_URL="raw.githubusercontent.com/mousethain/tahu/main"
+export Server1_URL="raw.githubusercontent.com/mousethain/tahu/main"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
@@ -141,7 +141,7 @@ echo ""
 read -n 1 -s -r -p "Penyet sak karepmu cuk"
 menu
 }
-wget -q -O /root/status "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/statushariini"
+wget -q -O /root/status "raw.githubusercontent.com/mousethain/tahu/main/statushariini"
 LocalVersion=$(cat /root/versi)
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )

@@ -10,7 +10,7 @@ sleep 0.5
 
 CEKEXPIRED() {
     today=$(date -d "+1 day" "+%Y-%m-%d")
-    Exp1=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
         echo -e "Status script aktif."
     else
@@ -18,11 +18,11 @@ CEKEXPIRED() {
         exit 0
     fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 else
-echo "Akses di tolak!! Benget sia hurung!!";
+echo "Akses di tolak!! su asu!!";
 exit 0
 fi
 
@@ -57,7 +57,7 @@ echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 
 sudo apt install vnstat
 sudo apt insta squid
-wget -q -O https://raw.githubusercontent.com/messiey/rocky/master/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q -O https://raw.githubusercontent.com/mousethain/tahu/main/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 
@@ -85,10 +85,10 @@ echo -e "$green      Install SSH / WS / UDP              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl "https://raw.githubusercontent.com/messiey/rocky/master/menu/ssh-vpn.sh" | bash
+curl "https://raw.githubusercontent.com/mousethain/tahu/main/menu/ssh-vpn.sh" | bash
 sleep 2
-wget https://raw.githubusercontent.com/messiey/rocky/master/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
-wget -q -O demeling.sh https://raw.githubusercontent.com/messiey/rocky/master/demeling.sh && chmod +x demeling.sh && ./demeling.sh
+wget https://raw.githubusercontent.com/mousethain/tahu/main/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget -q -O demeling.sh https://raw.githubusercontent.com/mousethain/tahu/main/demeling.sh && chmod +x demeling.sh && ./demeling.sh
 
 
 
@@ -155,14 +155,14 @@ echo -e "$green      Install Websocket              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl "https://raw.githubusercontent.com/messiey/rocky/master/Insshws/insshws.sh" | bash
+curl "https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/insshws.sh" | bash
 
 #exp
 cd /usr/bin
-wget -O xp "https://raw.githubusercontent.com/messiey/rocky/master/menu/xp.sh"
+wget -O xp "https://raw.githubusercontent.com/mousethain/tahu/main/menu/xp.sh"
 chmod +x xp
 sleep 1
-wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/messiey/rocky/master/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
+wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/mousethain/tahu/main/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
 
 cd
 #remove log 

@@ -6,12 +6,12 @@ mkdir -p /root/folder
 echo -e "${GREEN}Harap Bersabar Tuan${NC}"
 wget -q -O /root/status "https://raw.githubusercontent.com/mousethain/tahu/main/statushariini"
 
-wget -q -O /etc/version "https://raw.githubusercontent.com/messiey/rocky/master/versiupdate" && chmod +x /etc/version
+wget -q -O /etc/version "https://raw.githubusercontent.com/mousethain/tahu/main/versiupdate" && chmod +x /etc/version
 
-#wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu.sh"
-wget -q -O /usr/bin/menu1 "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu1.sh"
-wget -q -O /usr/bin/delv2ray "https://raw.githubusercontent.com/messiey/rocky/master/menu/delv2ray.sh"
-#wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-ws.sh"
+#wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu.sh"
+wget -q -O /usr/bin/menu1 "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu1.sh"
+wget -q -O /usr/bin/delv2ray "https://raw.githubusercontent.com/mousethain/tahu/main/menu/delv2ray.sh"
+#wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-ws.sh"
 #wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-ssws.sh"
 #wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-socks.sh"
 #wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-vless.sh"

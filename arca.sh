@@ -13,59 +13,59 @@ wget -q -O /usr/bin/menu1 "https://raw.githubusercontent.com/mousethain/tahu/mai
 wget -q -O /usr/bin/delv2ray "https://raw.githubusercontent.com/mousethain/tahu/main/menu/delv2ray.sh"
 #wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-ws.sh"
 #wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-ssws.sh"
-#wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-socks.sh"
-#wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-vless.sh"
-#wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-tr.sh"
-#wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-trgo.sh"
-wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/messiey/rocky/master/menu/autoreboot.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/restart.sh"
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/messiey/rocky/master/limit/tendang.sh"
-wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/clearlog.sh"
-wget -q -O /usr/bin/running "https://raw.githubusercontent.com/messiey/rocky/master/menu/running.sh"
-wget -q -O /usr/bin/cek-trafik "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/cek-trafik.sh"
-wget -q -O /usr/bin/cek-speed "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/speedtes_cli.py"
-wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/cek-bandwidth.sh"
-wget -q -O /usr/bin/cek-ram "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/ram.sh"
-wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/limit-speed.sh"
+#wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-socks.sh"
+#wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-vless.sh"
+#wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-tr.sh"
+#wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-trgo.sh"
+wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/mousethain/tahu/main/menu/autoreboot.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/restart.sh"
+wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/mousethain/tahu/main/limit/tendang.sh"
+wget -q -O /usr/bin/clearlog "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/clearlog.sh"
+wget -q -O /usr/bin/running "https://raw.githubusercontent.com/mousethain/tahu/main/menu/running.sh"
+wget -q -O /usr/bin/cek-trafik "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/cek-trafik.sh"
+wget -q -O /usr/bin/cek-speed "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/speedtes_cli.py"
+wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/cek-bandwidth.sh"
+wget -q -O /usr/bin/cek-ram "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/ram.sh"
+wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/limit-speed.sh"
 
-#wget -q -O /usr/bin/menu-socks "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/menu-socks.sh"
-wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-ss.sh"
-wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-vless.sh"
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-vmess.sh"
-wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-trojan.sh"
-#wget -q -O /usr/bin/menu-trgo "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/menu-trgo.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-ssh.sh"
-#wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/menu-bckp-telegram.sh"
-wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/menu-bckp-github.sh"
-#wget -q -O /usr/bin/bckp "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/bckpbot.sh"
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/messiey/rocky/master/menu/usernew.sh"
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu.sh"
-wget -q -O /usr/bin/wbm "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/webmin.sh"
-wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/changer.sh"
-#wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/messiey/rocky/master/xp.sh"
-wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/addhost.sh"
-wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/genssl.sh"
-wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/cf.sh"
-#wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/update.sh"
-wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/messiey/rocky/master/cyber.site"
-wget -q -O /root/versi "https://raw.githubusercontent.com/messiey/rocky/master/versiupdate"
-wget -q -O /usr/bin/updatsc "https://raw.githubusercontent.com/messiey/rocky/master/menu/update.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-backup.sh"
-wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/messiey/rocky/master/menu/cf.sh"
-wget -q -O /usr/bin/setting "https://raw.githubusercontent.com/messiey/rocky/master/Themes/setting.sh"
-wget -q -O /usr/bin/menu-ipsec "https://raw.githubusercontent.com/messiey/rocky/master/ipsec/menu-ipsec.sh"
-wget https://raw.githubusercontent.com/messiey/rocky/master/SLDNS/wslow.sh
-wget https://raw.githubusercontent.com/messiey/rocky/master/backup/set-br.sh
+#wget -q -O /usr/bin/menu-socks "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/menu-socks.sh"
+wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-ss.sh"
+wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-vless.sh"
+wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-vmess.sh"
+wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-trojan.sh"
+#wget -q -O /usr/bin/menu-trgo "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/menu-trgo.sh"
+wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-ssh.sh"
+#wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/menu-bckp-telegram.sh"
+wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/menu-bckp-github.sh"
+#wget -q -O /usr/bin/bckp "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/bckpbot.sh"
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/mousethain/tahu/main/menu/usernew.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu.sh"
+wget -q -O /usr/bin/wbm "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/webmin.sh"
+wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/changer.sh"
+#wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/mousethain/tahu/main/xp.sh"
+wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/addhost.sh"
+wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/genssl.sh"
+wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/cf.sh"
+#wget -q -O /usr/bin/update "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/update.sh"
+wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/mousethain/tahu/main/cyber.site"
+wget -q -O /root/versi "https://raw.githubusercontent.com/mousethain/tahu/main/versiupdate"
+wget -q -O /usr/bin/updatsc "https://raw.githubusercontent.com/mousethain/tahu/main/menu/update.sh"
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-backup.sh"
+wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/mousethain/tahu/main/menu/cf.sh"
+wget -q -O /usr/bin/setting "https://raw.githubusercontent.com/mousethain/tahu/main/Themes/setting.sh"
+wget -q -O /usr/bin/menu-ipsec "https://raw.githubusercontent.com/mousethain/tahu/main/ipsec/menu-ipsec.sh"
+wget https://raw.githubusercontent.com/mousethain/tahu/main/SLDNS/wslow.sh
+wget https://raw.githubusercontent.com/mousethain/tahu/main/backup/set-br.sh
 bash set-br.sh
-wget https://raw.githubusercontent.com/messiey/rocky/master/Themes/thema.sh
-wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial.sh"
-wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial.sh" && chmod +x /usr/bin/trial
-wget -q -O /usr/bin/trial-vmess "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial-vmess.sh" && chmod +x /usr/bin/trial-vmess
-wget -q -O /usr/bin/trial-trojan "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial-trojan.sh" && chmod +x /usr/bin/trial-trojan
-wget -q -O /usr/bin/trial-udp "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial-udp.sh" && chmod +x /usr/bin/trial-udp
-wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial-vless.sh" && chmod +x /usr/bin/trial-vless
-wget -q -O /usr/bin/menu-trial "https://raw.githubusercontent.com/messiey/rocky/master/trial/trial-generator.sh" && chmod +x /usr/bin/menu-trial
-wget https://raw.githubusercontent.com/messiey/rocky/master/menu/3d.flf
+wget https://raw.githubusercontent.com/mousethain/tahu/main/Themes/thema.sh
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial.sh"
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial.sh" && chmod +x /usr/bin/trial
+wget -q -O /usr/bin/trial-vmess "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-vmess.sh" && chmod +x /usr/bin/trial-vmess
+wget -q -O /usr/bin/trial-trojan "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-trojan.sh" && chmod +x /usr/bin/trial-trojan
+wget -q -O /usr/bin/trial-udp "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-udp.sh" && chmod +x /usr/bin/trial-udp
+wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-vless.sh" && chmod +x /usr/bin/trial-vless
+wget -q -O /usr/bin/menu-trial "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-generator.sh" && chmod +x /usr/bin/menu-trial
+wget https://raw.githubusercontent.com/mousethain/tahu/main/menu/3d.flf
 mv 3d.flf /usr/share/figlet/
 
 sudo apt-get install curl -y
@@ -81,45 +81,45 @@ git clone https://github.com/magnific0/wondershaper.git
 cd wondershaper
 sudo make install
 
-wget -q -O /usr/bin/addudp "https://raw.githubusercontent.com/messiey/rocky/master/menu/addssh.sh"
-wget -q -O /usr/bin/udp "https://raw.githubusercontent.com/messiey/rocky/master/menu/menush.sh"
+wget -q -O /usr/bin/addudp "https://raw.githubusercontent.com/mousethain/tahu/main/menu/addssh.sh"
+wget -q -O /usr/bin/udp "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menush.sh"
 
 sudo apt install squid -y
 mkdir /var/lib/ssnvpn-pro/
 rm -f /usr/bin/menu-ssh
-wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "https://raw.githubusercontent.com/messiey/rocky/master/ipvps.conf"
-wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/messiey/rocky/master/limit/autokill.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-ssh.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/messiey/rocky/master/menu/restart.sh"
+wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "https://raw.githubusercontent.com/mousethain/tahu/main/ipvps.conf"
+wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/mousethain/tahu/main/limit/autokill.sh"
+wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-ssh.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/mousethain/tahu/main/menu/restart.sh"
 chmod +x /usr/bin/restart
-wget -q -O /usr/bin/bot "https://raw.githubusercontent.com/messiey/rocky/master/Finaleuy/bot.sh"
-wget -q -O /root/chat "https://raw.githubusercontent.com/messiey/rocky/master/Finaleuy/chatid.sh"
+wget -q -O /usr/bin/bot "https://raw.githubusercontent.com/mousethain/tahu/main/Finaleuy/bot.sh"
+wget -q -O /root/chat "https://raw.githubusercontent.com/mousethain/tahu/main/Finaleuy/chatid.sh"
 
-wget -q -O /usr/bin/limitvmess "https://raw.githubusercontent.com/messiey/rocky/master/limit/limitvmess.sh" && chmod +x /usr/bin/limitvmess
+wget -q -O /usr/bin/limitvmess "https://raw.githubusercontent.com/mousethain/tahu/main/limit/limitvmess.sh" && chmod +x /usr/bin/limitvmess
 
-wget -q -O /usr/bin/limitvless "https://raw.githubusercontent.com/messiey/rocky/master/limit/limitvless.sh" && chmod +x /usr/bin/limitvless
+wget -q -O /usr/bin/limitvless "https://raw.githubusercontent.com/mousethain/tahu/main/limit/limitvless.sh" && chmod +x /usr/bin/limitvless
 
-wget -q -O /usr/bin/limittrojan "https://raw.githubusercontent.com/messiey/rocky/master/limit/limittrojan.sh" && chmod +x /usr/bin/limittrojan
-wget -q -O /usr/bin/sistem "https://raw.githubusercontent.com/messiey/rocky/master/menu/sistem.sh" && chmod +x /usr/bin/sistem
-wget -q -O /etc/crontab "https://raw.githubusercontent.com/messiey/rocky/master/crontab" && chmod 644 /etc/crontab
+wget -q -O /usr/bin/limittrojan "https://raw.githubusercontent.com/mousethain/tahu/main/limit/limittrojan.sh" && chmod +x /usr/bin/limittrojan
+wget -q -O /usr/bin/sistem "https://raw.githubusercontent.com/mousethain/tahu/main/menu/sistem.sh" && chmod +x /usr/bin/sistem
+wget -q -O /etc/crontab "https://raw.githubusercontent.com/mousethain/tahu/main/crontab" && chmod 644 /etc/crontab
 
-wget -q -O /usr/bin/cftn "https://raw.githubusercontent.com/messiey/rocky/master/menu/cftn.sh" && chmod +x /usr/bin/cftn
+wget -q -O /usr/bin/cftn "https://raw.githubusercontent.com/mousethain/tahu/main/menu/cftn.sh" && chmod +x /usr/bin/cftn
 
-wget -q -O /usr/bin/infosc "https://raw.githubusercontent.com/messiey/rocky/master/limit/info.sh" && chmod +x /usr/bin/infosc
+wget -q -O /usr/bin/infosc "https://raw.githubusercontent.com/mousethain/tahu/main/limit/info.sh" && chmod +x /usr/bin/infosc
 echo "*/2 * * * * root sistem" >> /etc/crontab
 
 rm /etc/rsyslog.d/50-default.conf
 
-wget https://raw.githubusercontent.com/messiey/rocky/master/50-default.conf
+wget https://raw.githubusercontent.com/mousethain/tahu/main/50-default.conf
 
 
 cp 50-default.conf /etc/rsyslog.d/50-default.conf
 service rsyslog restart
 
-wget -q -O /etc/default/dropbear "https://raw.githubusercontent.com/messiey/rocky/master/dropbear" && chmod +x /etc/default/dropbear
+wget -q -O /etc/default/dropbear "https://raw.githubusercontent.com/mousethain/tahu/main/dropbear" && chmod +x /etc/default/dropbear
 
 
-wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/messiey/rocky/master/menu/xp.sh" && chmod +x /usr/bin/xp
+wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/mousethain/tahu/main/menu/xp.sh" && chmod +x /usr/bin/xp
 
 #SERVICE xp
 cat >/etc/systemd/system/xp.service << EOF
@@ -163,7 +163,7 @@ systemctl enable tendang
 systemctl restart tendang
 
 
-wget -q -O /usr/bin/limitipxray "https://raw.githubusercontent.com/messiey/rocky/master/limit/limitipxray.py" && chmod +x /usr/bin/limitipxray
+wget -q -O /usr/bin/limitipxray "https://raw.githubusercontent.com/mousethain/tahu/main/limit/limitipxray.py" && chmod +x /usr/bin/limitipxray
 
 
 cat >/etc/systemd/system/iplimit.service << EOF
@@ -185,9 +185,9 @@ systemctl enable iplimit
 systemctl restart iplimit
 
 
-wget -q -O /usr/bin/menu-noobzvpns "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-noobzvpns.sh" && chmod +x /usr/bin/menu-noobzvpns
+wget -q -O /usr/bin/menu-noobzvpns "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-noobzvpns.sh" && chmod +x /usr/bin/menu-noobzvpns
 
-wget https://raw.githubusercontent.com/messiey/rocky/master/menu/noobzvpns.zip
+wget https://raw.githubusercontent.com/mousethain/tahu/main/menu/noobzvpns.zip
 unzip noobzvpns.zip
 bash install.sh
 rm noobzvpns.zip
@@ -199,7 +199,7 @@ systemctl restart noobzvpns
 touch /etc/trialxray.txt
 
 
-wget -q -O /usr/bin/service-trial "https://raw.githubusercontent.com/messiey/rocky/master/menu/service-trial.sh" && chmod +x /usr/bin/service-trial
+wget -q -O /usr/bin/service-trial "https://raw.githubusercontent.com/mousethain/tahu/main/menu/service-trial.sh" && chmod +x /usr/bin/service-trial
 
 
 cat >/etc/systemd/system/trial.service << EOF

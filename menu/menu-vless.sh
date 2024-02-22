@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')biji=`date +"%Y-%m-%d" -d "$dateFromServer"`         colornow=$(cat /etc/ssnvpn/theme/color.conf)         NC="\e[0m"                                           RED="\033[0;31m"                                     COLOR1='\033[0;35m'
-BURIQ () {                                           curl -sS  https://raw.githubusercontent.com/messiey/rocky/master/gerung > /root/tmp
+BURIQ () {                                           curl -sS  https://raw.githubusercontent.com/mousethain/tahu/main/gerung > /root/tmp
 data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
 for user in "${data[@]}"
 do

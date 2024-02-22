@@ -6,10 +6,7 @@ aji=$(cat .id)
 
 
 function send-log(){
-CHATID=$aji
-KEY="$azi"
 TIME="10"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
 <code>────────────────────</code>
 <b>🕊NOTIF QUOTA HABIS🕊</b>
@@ -18,7 +15,6 @@ TEXT="
 <code>Usage     : </code><code>$total</code>
 <code>────────────────────</code>
 "
-curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 
 function con() {

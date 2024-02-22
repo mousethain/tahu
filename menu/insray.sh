@@ -123,13 +123,13 @@ install_ssl(){
 mkdir -p /home/vps/public_html
 wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/vps.conf.txt"
 sleep 1
-wget -q -O xraymode.sh https://raw.githubusercontent.com/messiey/rocky/master/menu/xraymode.sh && chmod +x xraymode.sh && ./xraymode.sh
+wget -q -O xraymode.sh https://raw.githubusercontent.com/mousethain/tahu/main/menu/xraymode.sh && chmod +x xraymode.sh && ./xraymode.sh
 sleep 1 
-wget -q -O /etc/xray/config.json "https://raw.githubusercontent.com/messiey/rocky/master/configuration/config.json"
+wget -q -O /etc/xray/config.json "https://raw.githubusercontent.com/mousethain/tahu/main/configuration/config.json"
 chmod +x /etc/xray/config.json
 sleep 1 
 rm -f /etc/nginx/conf.d/xray.conf
-wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/messiey/rocky/master/configuration/xray.conf"
+wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/mousethain/tahu/main/configuration/xray.conf"
 chmod +x /etc/nginx/conf.d/xray.conf
 
 # Installing Xray Service
@@ -177,7 +177,7 @@ systemctl restart xray >/dev/null 2>&1
 systemctl restart nginx >/dev/null 2>&1
 
 #LIMIT QUOTA
-wget -q -O /usr/local/sbin/quota "https://raw.githubusercontent.com/messiey/rocky/master/limit/quota.sh"
+wget -q -O /usr/local/sbin/quota "https://raw.githubusercontent.com/mousethain/tahu/main/limit/quota.sh"
 chmod +x /usr/local/sbin/quota
 chmod +x /usr/local/sbin/quota
 cd /usr/local/sbin/

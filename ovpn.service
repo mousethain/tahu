@@ -1,5 +1,5 @@
 [Unit]
-Description=Python Edu Websocket Ovpn Proxy By HideSSH.com
+Description=Python Edu Websocket Ovpn Proxy By Mousevpn
 Documentation=https://hidessh.com
 After=network.target nss-lookup.target
 [Service]

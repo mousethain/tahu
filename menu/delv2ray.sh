@@ -60,6 +60,6 @@ echo "Username  : $user"
 
 echo "Expired   : $exp"
 echo  ============================================================
-echo           Gretongers Vpn Premium
+echo           Mousevpn
 echo ============================================================
 

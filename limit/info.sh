@@ -1,7 +1,7 @@
 clear
-figlet -f 3d "Gretongers Vpn Premium Tunneling" | lolcat
+figlet -f 3d "Mousevpn Premium" | lolcat
 cat /root/log-install.txt
 echo "-----------------------------------------------------"
-echo "                Credit Script @wongedan_kuwibebas" | lolcat
-echo "                   Author Script Gretongers Vpn Premium" | lolcat
+echo "                Credit Script @Mousevpn" | lolcat
+echo "                   Author Script MouseVpn Premium" | lolcat
 echo "-----------------------------------------------------"

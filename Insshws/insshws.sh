@@ -6,7 +6,7 @@ apt install python -y
 
 #Install Script Websocket-SSH Python
 wget -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/Azigaming404/websocket/main/openssh.py && chmod +x /usr/local/bin/edu-proxy
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/messiey/rocky/master/Insshws/dropbear-ws.py.txt
+wget -O /usr/local/bin/ws-dropbear raw.githubusercontent.com/mousethain/tahu/main/Insshws/dropbear-ws.py.txt
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/messiey/rocky/master/Insshws/ws-stunnel.txt
 #wget -O /usr/local/bin/edu-proxyovpn https://gitlab.com/hidessh/baru/-/raw/main/websocket-python/baru/ovpn.py && chmod +x /usr/local/bin/edu-proxyovpn
 

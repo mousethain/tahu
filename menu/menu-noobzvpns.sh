@@ -36,7 +36,7 @@ export Auther="XdrgVPN"
 
 # status
 rm -rf /root/status
-wget -q -O /root/status "https://raw.githubusercontent.com/messiey/rocky/master/statushariini"
+wget -q -O /root/status "https://raw.githubusercontent.com/mousethain/tahu/main/statushariini"
 
 
 function create(){
@@ -105,7 +105,7 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 echo "USERNAME: $user"
 echo "Delete success!!"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m      °Gretongers Vpn Premium°            \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m      °Mousevpn°            \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 
@@ -125,7 +125,7 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 echo "USERNAME: $user"
 echo "renew success!!"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m      °Gretongers Vpn Premium°            \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m      °Mousevpn°            \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 
@@ -146,7 +146,7 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 echo "USERNAME: $user"
 echo "locked success!!"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m      °Gretongers Vpn Premium°            \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m      °Mousevpn°            \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 
@@ -164,7 +164,7 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 noobzvpns --info-all-user | awk '/^\s*\+.*-> active/ {gsub(/(issued\(yyyymmdd\)|hash_key): [0-9a-f]+/, ""); print; getline; print; getline; getline; getline; print; print "═══════════════════"}'
 
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m      °Gretongers Vpn Premium°            \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m      °Mousevpn°            \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 
@@ -184,7 +184,7 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 echo "USERNAME: $user"
 echo "unlocked success!!"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m      °Gretongers Vpn Premium°            \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m      °Mousevpn°            \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 
@@ -216,7 +216,7 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 echo "USERNAME: $user"
 echo "unlocked success!!"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m      °Gretongers Vpn Premium°            \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m      °Mousevpn°            \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 }
 

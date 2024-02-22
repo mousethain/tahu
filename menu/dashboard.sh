@@ -242,7 +242,7 @@ echo -e "${GREEN}┌────────────────────
 echo -e "${GREEN}│ ${BOLD}${LIGHT}Client    = $Name                           ${NC}"
 echo -e "${GREEN}│ ${BOLD}${LIGHT}Expired   = $Exp                           ${NC}"
 echo -e "${GREEN}│ ${BOLD}${LIGHT}remaining = ${YELLOW}$left Days                          ${NC}"
-echo -e "${GREEN}│ ${BOLD}${LIGHT}Developer = GRETONGERS VPN PREMIUIM💯                         ${NC}"
+echo -e "${GREEN}│ ${BOLD}${LIGHT}Developer = Mousevpn                        ${NC}"
 echo -e "${GREEN}│ ${BOLD}${LIGHT}Version   = 7.0.0 LTS                         ${NC}"
 
 echo -e "${GREEN}└──────────────────────────────────────────────────┘${NC}"

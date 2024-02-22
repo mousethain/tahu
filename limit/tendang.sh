@@ -37,19 +37,7 @@ iplimit=$((nilai++))
     if [[ $cekcek -gt $iplimit ]]; then
         passwd -l "$user"
 
-pesan="
---------------------------------
-🕊 MULTI LOGIN DETECTED 🕊
---------------------------------
-$tanggal\nlock User: $user Login: $cekcek IP Max: $ip IP \n
---------------------------------
-"
-source /root/cybervpn/var.txt && echo $BOT_TOKEN > .bot
-azi=$(cat .bot)
-source /root/cybervpn/var.txt && echo $ADMIN > .id
-aji=$(cat .id)
 
-curl -s -X POST "https://api.telegram.org/bot$azi/sendMessage" \ -d "chat_id=$aji" \ -d "text=$pesan"
 
         nais=3
         echo -e "$tanggal\nlock User: $user Login: $cekcek IP Max: $ip IP \n" >> /etc/funny/log/ssh/ssh.log

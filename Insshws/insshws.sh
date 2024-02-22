@@ -8,7 +8,7 @@ apt install python -y
 wget -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/mousethain/tahu/main/openssh.py && chmod +x /usr/local/bin/edu-proxy
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/dropbear-ws.py.txt
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/ws-stunnel.txt
-#wget -O /usr/local/bin/edu-proxyovpn https://raw.githubusercontent.com/mousethain/tahu/main/websocket-python/baru/ovpn.py && chmod +x /usr/local/bin/edu-proxyovpn
+#wget -O /usr/local/bin/edu-proxyovpn https://raw.githubusercontent.com/mousethain/tahu/main/ovpn.py && chmod +x /usr/local/bin/edu-proxyovpn
 
 #izin permision
 chmod +x /usr/local/bin/edu-proxy
@@ -19,7 +19,7 @@ chmod +x /usr/local/bin/edu-proxyovpn
 
 #System Direcly dropbear Websocket-SSH Python
 
-wget -O /etc/systemd/system/edu-proxy.service https://gitlab.com/hidessh/baru/-/raw/main/websocket-python/baru/http.service && chmod +x /etc/systemd/system/edu-proxy.service
+wget -O /etc/systemd/system/edu-proxy.service https://raw.githubusercontent.com/mousethain/tahu/main/http.service && chmod +x /etc/systemd/system/edu-proxy.service
 
 #System Dropbear Websocket-SSH Python
 wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/service-wsdropbear.txt && chmod +x /etc/systemd/system/ws-dropbear.service
@@ -28,7 +28,7 @@ wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.co
 wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/ws-stunnel.service.txt && chmod +x /etc/systemd/system/ws-stunnel.service
 
 ##System Websocket-OpenVPN Python
-#wget -O /etc/systemd/system/edu-proxyovpn.service https://gitlab.com/hidessh/baru/-/raw/main/websocket-python/baru/ovpn.service && chmod +x /etc/systemd/system/edu-proxyovpn.service
+#wget -O /etc/systemd/system/edu-proxyovpn.service https://raw.githubusercontent.com/mousethain/tahu/main/ovpn.service && chmod +x /etc/systemd/system/edu-proxyovpn.service
 
 #restart service
 #

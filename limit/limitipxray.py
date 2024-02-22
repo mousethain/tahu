@@ -23,13 +23,7 @@ def process_user_protocol(protocol):
             jumlahdata = subprocess.run(["wc", "-l", f"/root/limit/{user}"], capture_output=True, text=True).stdout
             jumlahdata = int(jumlahdata.strip().split()[0])
             if jumlahdata > limitxray:
-                kirimtele = f" MULTI LOGIN DETECTED {user} login {jumlahdata} IP"
-                with open("/root/limit/rulesxray.txt", "a") as rules_file:
-                    rules_file.write(f"#{protocol} {kirimtele}\n")
-                with open("/root/cybervpn/var.txt") as var_file:
-                    BOT_TOKEN = var_file.readline().strip()
-                    ADMIN = var_file.readline().strip()
-                subprocess.run(["curl", "-s", "-X", "POST", f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", "-d", f"chat_id={ADMIN}", "-d", f"text={kirimtele}"])
+                
                 exp = open('/etc/xray/config.json').read()
                 exp = exp.split(f"#{protocol} {user} ")[-1].split('},')[0]
                 subprocess.run(["sed", "-i", f"/^#{protocol} {user} {exp}/,/^}},{{/d", "/etc/xray/config.json"])

@@ -24,9 +24,9 @@ clear
  ※                                 ※
  ※\e[0m   WELCOME MY SYSTEM GRETONGERS VPN PREMIUM \e[36m※
  ※                                 ※
- ※\e[0m   \e[35mWhatsApp\e[0m    \e[36m:\e[0m \e[33m+6287704622943\e[0m    \e[36m※
- ※\e[0m   \e[35mTelegram\e[0m    \e[36m:\e[0m \e[33m@wongedan_kuwibebas\e[0m      \e[36m※
- ※\e[0m   \e[35mInstagram\e[0m    \e[36m:\e[0m \e[33m@wongedan_kuwibebas[0m      \e[36m※
+ ※\e[0m   \e[35mWhatsApp\e[0m    \e[36m:\e[0m \e[33m kepo\e[0m    \e[36m※
+ ※\e[0m   \e[35mTelegram\e[0m    \e[36m:\e[0m \e[33m@mousevpn\e[0m      \e[36m※
+ ※\e[0m   \e[35mInstagram\e[0m    \e[36m:\e[0m \e[33m@mousevpn[0m      \e[36m※
   ※                                 ※
  ※\e[0m        \e[31m©\e[0m WONGEDAN™ \e[31m®\e[0m         \e[36m※
  ※                                 ※

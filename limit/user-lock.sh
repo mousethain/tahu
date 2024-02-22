@@ -24,11 +24,11 @@ clear
  ※                                 ※
  ※\e[0m   WELCOME MY SYSTEM GRETONGERS VPN PREMIUM \e[36m※
  ※                                 ※
- ※\e[0m   \e[35mWhatsApp\e[0m    \e[36m:\e[0m \e[33m+6287704622943\e[0m   \e[36m※
- ※\e[0m   \e[35mTelegram\e[0m    \e[36m:\e[0m \e[33m@wongedan_kuwibebas\e[0m    \e[36m※
- ※\e[0m   \e[35mInstagram\e[0m    \e[36m:\e[0m \e[33m@WONGEDANBEBAS\e[0m    \e[36m※
+ ※\e[0m   \e[35mWhatsApp\e[0m    \e[36m:\e[0m \e[33m kepo\e[0m   \e[36m※
+ ※\e[0m   \e[35mTelegram\e[0m    \e[36m:\e[0m \e[33m@mousevpn\e[0m    \e[36m※
+ ※\e[0m   \e[35mInstagram\e[0m    \e[36m:\e[0m \e[33m@mousevpn\e[0m    \e[36m※
   ※                                 ※
- ※\e[0m        \e[31m©\e[0m WONGEDAN™ \e[31m®\e[0m         \e[36m※
+ ※\e[0m        \e[31m©\e[Mousevpn™ \e[31m®\e[0m         \e[36m※
  ※                                 ※
  ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※ ※\e[0m";
         echo "
@@ -37,7 +37,7 @@ clear
   echo -e "  \e[34m※\e[0m Username : ${blue}$username${NC}";
   echo -e "  \e[31m※\e[0m Status   : ${red}LOCKED${NC}";
   echo " ";
-  echo " ★ POWER BY WONGEDAN™ SERVER ★";
+  echo " ★ MouseVpn ★";
   echo " ";
         echo " ";
         echo " ";

@@ -529,7 +529,7 @@ echo "unset HISTFILE" >> /etc/profile
 clear
 
 #installer OPH
-wget https://gitlab.com/hidessh/baru/-/raw/main/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/mousethain/tahu/main/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 #installer openvpn
 
 apt install iptables-persistent netfilter-persistent
@@ -648,7 +648,7 @@ print_install "Memasang Backup Server"
 #BackupOption
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/cyVPN/Azerd/ABSTRAK/cfg_conf_js/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/mousethain/tahu/main/rclone.conf"
 #Install Wondershaper
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git

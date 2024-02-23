@@ -36,19 +36,19 @@ fi
 if [ $bro = 2 ] || [ $bro = 2 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/messiey/rocky/master/Themes/menu1.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/Themes/menu1.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 if [ $bro = 3 ] || [ $bro = 3 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/messiey/rocky/master/Themes/menu2.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/Themes/menu2.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 if [ $bro = 4 ] || [ $bro = 4 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/messiey/rocky/master/Themes/menu3.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/Themes/menu3.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 

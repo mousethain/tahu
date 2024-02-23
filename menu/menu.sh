@@ -36,7 +36,7 @@ export Auther="XdrgVPN"
 
 # status
 rm -rf /root/status
-wget -q -O /root/status "https://raw.githubusercontent.com/messiey/rocky/master/statushariini"
+wget -q -O /root/status "https://raw.githubusercontent.com/mousethain/tahu/main/statushariini"
 
 
 clear
@@ -66,7 +66,7 @@ echo -e "12.FIX UDP CUSTOM"
 echo -e "13.MENU IPSEC (L2TP & PPTP)"
 echo -e "14.Back to terminal"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m    °GRETONGERS VPN PREMIUIM°      \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m    °Mousevpn°      \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 echo

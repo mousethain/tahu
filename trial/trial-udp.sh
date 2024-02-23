@@ -27,7 +27,7 @@ echo "memeriksa vps anda"
 sleep 0.5
 CEKEXPIRED () {
         today=$(date -d +1day +%Y -%m -%d)
-        Exp1=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $3}')
+        Exp1=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $3}')
         if [[ $today < $Exp1 ]]; then
         echo "status script aktif.."
         else
@@ -35,7 +35,7 @@ CEKEXPIRED () {
         exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 CEKEXPIRED
@@ -60,7 +60,7 @@ cdndomain=$(cat /root/awscdndomain)
 slkey=$(cat /etc/slowdns/server.pub)
 clear
 
-echo "Script AutoCreate Akun SSH dan OpenVPN By GretongersVPN"
+echo "Script AutoCreate Akun SSH dan OpenVPN By Mousevpn"
 sleep 3
 echo Ping Host
 echo Cek Hak Akses...
@@ -116,6 +116,6 @@ echo -e "Created: Jam $hariini"
 echo -e "Expired: Jam $expi"
 
 echo -e "${LIGHT}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${CYAN}     Terimakasih sudah menggunakan" 
-echo -e "${CYAN}        script premium wongedan"
+echo -e "${CYAN}     Premium Server" 
+echo -e "${CYAN}        Mousevpn"
 echo -e "${LIGHT}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

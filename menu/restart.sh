@@ -85,6 +85,6 @@ systemctl restart xray
 /etc/init.d/fail2ban restart
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${YELLOW}          Terimakasih sudah menggunakan         "
-echo -e "                 Script Premium GRETONGERS VPN PREMIUIM"
+echo -e "${YELLOW}          Premium Server         "
+echo -e "                 Mousevpn"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

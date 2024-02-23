@@ -165,8 +165,6 @@ echo -e "$green      Install OPENVPN             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 wget "https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
 clear
-
-fi
 echo "0 5 * * * root reboot" >> /etc/crontab
 echo "* * * * * root clog" >> /etc/crontab
 echo "59 * * * * root pkill 'menu'" >> /etc/crontab

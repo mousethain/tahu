@@ -5,16 +5,12 @@ mkdir /var/lib/ssnvpn-pro/
 rm -f /usr/bin/menu-ssh
 
 
-wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "https://raw.githubusercontent.com/messiey/rocky/master/ipvps.conf"
-wger -q -O /usr/bin/tendang "https://raw.githubusercontent.com/messiey/rocky/master/limit/tendang.sh"
-#wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/messiey/rocky/master/limit/autokill.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/messiey/rocky/master/menu/menu-ssh.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/messiey/rocky/master/menu/restart.sh"
+wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "https://raw.githubusercontent.com/mousethain/tahu/main/ipvps.conf"
+wger -q -O /usr/bin/tendang "https://raw.githubusercontent.com/mousethain/tahu/main/limit/tendang.sh"
+#wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/mousethain/tahu/main/limit/autokill.sh"
+wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-ssh.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/mousethain/tahu/main/menu/restart.sh"
 chmod +x /usr/bin/restart
-wget -q -O /usr/bin/bot "https://raw.githubusercontent.com/messiey/rocky/master/Finaleuy/bot.sh"
-wget -q -O /root/chat "https://raw.githubusercontent.com/messiey/rocky/master/Finaleuy/chatid.sh"
-chmod 777 /root/chat
-chmod 777 /usr/bin/bot
 
 chmod +x /usr/bin/tendang
 chmod +x /usr/bin/autokill
@@ -65,10 +61,10 @@ service cron restart
 #konfigurasi slowdns
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/messiey/rocky/master/SLDNS/server.key"
-wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/messiey/rocky/master/SLDNS/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/messiey/rocky/master/SLDNS/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/messiey/rocky/master/SLDNS/sldns-client"
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/mousethain/tahu/main/SLDNS/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/mousethain/tahu/main/SLDNS/server.pub"
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/mousethain/tahu/main/SLDNS/sldns-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/mousethain/tahu/main/SLDNS/sldns-client"
 cd
 chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub

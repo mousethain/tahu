@@ -84,7 +84,7 @@ case $opt in
 09 | 9) clear ; menu-trial ;;
 10) clear ; setting ;;
 11) clear ; panelbot ;;
-12) clear ; curl "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/udp/udp-custom.sh" | bash ;;
+12) clear ; curl "https://raw.githubusercontent.com/mousethain/tahu/main/udp-custom.sh" | bash ;;
 13) clear ; menu-ipsec ;;
 14) clear ; menu1 ;;
 100) clear ; $up2u ;;

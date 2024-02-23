@@ -384,13 +384,13 @@ kernelku=$(uname -r)
 
 # DNS PATCH
 #tipeos2=$(uname -m)
-#Name=$(curl -sS https://raw.githubusercontent.com/Fahmiiiiiiii/anjim/main/anjay/allow | grep $MYIP | awk '{print $2}')
-#Exp=$(curl -sS https://raw.githubusercontent.com/Fahmiiiiiiii/anjim/main/anjay/allow | grep $MYIP | awk '{print $3}')
+#Name=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $2}')
+#Exp=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $3}')
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m            ⇱ GRETONGERS VPN PREMIUIM ⇲           \E[0m"
+echo -e "\E[44;1;39m            ⇱ Mousevpn ⇲           \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "❇️ Hostname    : $HOSTNAME"
 echo -e "❇️ OS Name     : $Tipe"

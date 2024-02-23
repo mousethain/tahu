@@ -20,7 +20,7 @@ commonname=none
 email=cybervpn@azigaming404.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/messiey/rocky/master/Insshws/password.txt"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/password.txt"
 chmod +x /etc/pam.d/common-password
 
 sudo apt install iptables-persistent netfilter-persistent
@@ -130,20 +130,20 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/messiey/rocky/master/configuration/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/mousethain/tahu/main/configuration/nginx.conf"
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
 cd
-wget -O /usr/bin/badvpn-udpgw https://raw.githubusercontent.com/messiey/rocky/master/udpgw/badvpn-udpgw && chmod +x  /usr/bin/badvpn-udpgw
+wget -O /usr/bin/badvpn-udpgw https://raw.githubusercontent.com/mousethain/tahu/main/udpgw/badvpn-udpgw && chmod +x  /usr/bin/badvpn-udpgw
 #system badvpn 7300
-wget -O /etc/systemd/system/svr-7300.service https://raw.githubusercontent.com/messiey/rocky/master/udpgw/svr-7300.service && chmod +x  /etc/systemd/system/svr-7300.service
+wget -O /etc/systemd/system/svr-7300.service https://raw.githubusercontent.com/mousethain/tahu/main/udpgw/svr-7300.service && chmod +x  /etc/systemd/system/svr-7300.service
 #system badvpn 7200
-wget -O /etc/systemd/system/svr-7200.service https://raw.githubusercontent.com/messiey/rocky/master/udpgw/svr-7200.service && chmod +x  /etc/systemd/system/svr-7200.service
+wget -O /etc/systemd/system/svr-7200.service https://raw.githubusercontent.com/mousethain/tahu/main/udpgw/svr-7200.service && chmod +x  /etc/systemd/system/svr-7200.service
 #system badvpn 7100
-wget -O /etc/systemd/system/svr-7100.service https://raw.githubusercontent.com/messiey/rocky/master/udpgw/svr-7100.service && chmod +x  /etc/systemd/system/svr-7100.service
+wget -O /etc/systemd/system/svr-7100.service https://raw.githubusercontent.com/mousethain/tahu/main/udpgw/svr-7100.service && chmod +x  /etc/systemd/system/svr-7100.service
 
 #reboot system 7100
 systemctl daemon-reload
@@ -237,7 +237,7 @@ sudo apt install grepcidr -y
 
 clear
 echo "Installation DDoS protection" | lolcat
-wget https://raw.githubusercontent.com/messiey/rocky/master/scurity/rules.zip
+wget https://raw.githubusercontent.com/mousethain/tahu/main/scurity/rules.zip
 unzip rules.zip
 
 # Check if the script is executed as root
@@ -429,14 +429,14 @@ exit 0
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/messiey/rocky/master/issue.net"
+wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/mousethain/tahu/main/issue.net"
 chmod +x /etc/cyber.site
 echo "Banner /etc/cyber.site" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/cyber.site"@g' /etc/default/dropbear
 
 
 #install bbr dan optimasi kernel
-wget https://raw.githubusercontent.com/messiey/rocky/master/Insshws/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP

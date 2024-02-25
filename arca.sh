@@ -15,6 +15,7 @@ wget -q -O /usr/bin/delv2ray "https://raw.githubusercontent.com/mousethain/tahu/
 #wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-ssws.sh"
 #wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-socks.sh"
 #wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-vless.sh"
+#wget -q -O /usr/bin/add-vmess "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-vmess.sh"
 #wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-tr.sh"
 #wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-trgo.sh"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/mousethain/tahu/main/menu/autoreboot.sh"

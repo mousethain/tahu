@@ -66,8 +66,6 @@ wget -q -O /usr/bin/trial-trojan "https://raw.githubusercontent.com/mousethain/t
 wget -q -O /usr/bin/trial-udp "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-udp.sh" && chmod +x /usr/bin/trial-udp
 wget -q -O /usr/bin/trial-vless "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-vless.sh" && chmod +x /usr/bin/trial-vless
 wget -q -O /usr/bin/menu-trial "https://raw.githubusercontent.com/mousethain/tahu/main/trial/trial-generator.sh" && chmod +x /usr/bin/menu-trial
-wget https://raw.githubusercontent.com/mousethain/tahu/main/menu/3d.flf
-mv 3d.flf /usr/share/figlet/
 
 sudo apt-get install curl -y
 
@@ -94,7 +92,6 @@ wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/mousethain/tahu/
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/mousethain/tahu/main/menu/restart.sh"
 chmod +x /usr/bin/restart
 wget -q -O /usr/bin/bot "https://raw.githubusercontent.com/mousethain/tahu/main/Finaleuy/bot.sh"
-wget -q -O /root/chat "https://raw.githubusercontent.com/mousethain/tahu/main/Finaleuy/chatid.sh"
 
 wget -q -O /usr/bin/limitvmess "https://raw.githubusercontent.com/mousethain/tahu/main/limit/limitvmess.sh" && chmod +x /usr/bin/limitvmess
 

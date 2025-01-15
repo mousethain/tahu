@@ -8,7 +8,22 @@ NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "memeriksa vps anda"
 sleep 0.5
-
+CEKEXPIRED () {
+today=$(date -d +1day +%Y -%m -%d)
+Exp1=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $3}')
+if [[ $today < $Exp1 ]]; then
+echo "status script aktif.."
+else
+echo "SCRIPT ANDA EXPIRED";
+exit 0
+fi
+}
+IZIN=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | awk '{print $4}' | grep $MYIP)
+if [ $MYIP = $IZIN ]; then
+echo "IZIN DI TERIMA!!"
+else
+echo "Akses di tolak!! Silakan Hubungi Admin";
+exit 0
 fi
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )

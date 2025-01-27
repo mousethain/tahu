@@ -410,7 +410,7 @@ read -p "${BIWhite}IP LIMIT: " max
 
 
 if [ "$max" -eq 1 ]; then
-    echo "minimal limit ip 2"
+    echo "minimal limit ip 1"
     exit 0
 fi
 

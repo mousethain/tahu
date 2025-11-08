@@ -253,9 +253,60 @@ read -p "Username : " User
 egrep "^$User" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 read -p "Day Extend : " Days
+function renew(){
+clear
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo
+read -p "Username : " User
+egrep "^$User" /etc/passwd >/dev/null
+if [ $? -eq 0 ]; then
+read -p "Day Extend : " Days
 Today=`date +%s`
 Days_Detailed=$(( $Days * 86400 ))
-Expire_On=$(($Today + $Days_Detailed))
+OLD_EXPIRY_DAYS=$(cat /etc/shadow | grep -E "^$User:" | cut -d: -f8)
+if [ -z "$OLD_EXPIRY_DAYS" ]; then
+    OLD_EXPIRY_EPOCH=0
+else
+    OLD_EXPIRY_EPOCH=$(( $OLD_EXPIRY_DAYS * 86400 ))
+fi
+if [ $OLD_EXPIRY_EPOCH -gt $Today ]; then
+
+    Expire_On=$(( $OLD_EXPIRY_EPOCH + $Days_Detailed ))
+else
+    Expire_On=$(( $Today + $Days_Detailed ))
+fi
+Expiration=$(date -u --date="1970-01-01 $Expire_On sec GMT" +%Y/%m/%d)
+Expiration_Display=$(date -u --date="1970-01-01 $Expire_On sec GMT" '+%d %b %Y')
+passwd -u $User
+usermod -e  $Expiration $User
+egrep "^$User" /etc/passwd >/dev/null
+echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null # Catatan: Variabel $Pass tidak didefinisikan, ini mungkin bug lain.
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e ""
+echo -e " Username : $User"
+echo -e " Days Added : $Days Days"
+echo -e " Expires on :  $Expiration_Display"
+echo -e ""
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+else
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e ""
+echo -e "   Username Doesnt Exist      "
+echo -e ""
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+fi
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
 Expiration=$(date -u --date="1970-01-01 $Expire_On sec GMT" +%Y/%m/%d)
 Expiration_Display=$(date -u --date="1970-01-01 $Expire_On sec GMT" '+%d %b %Y')
 passwd -u $User

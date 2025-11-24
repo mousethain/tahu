@@ -21,7 +21,7 @@ do
 
 
 exp=$(grep -wE "^#& $akun" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-iplimit=$(cat /etc/cybervpn/limit/vless/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/vless/ip/${akun})
 byte=$(cat /etc/vless/${akun})
 lim=$(con ${byte})
 wey=$(cat /etc/limit/vless/${akun})

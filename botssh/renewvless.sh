@@ -10,14 +10,14 @@ read -rp "Input Username : " user
     if [ -z $user ]; then
     menu-trojan
     else
-    rm -f /etc/cybervpn/limit/trojan/ip/${user}
+    rm -f /etc/mousevpn/limit/trojan/ip/${user}
     rm -f /etc/trojan/$user
     read -p "Expired (days): " masaaktif
     read -p "Limit User (GB): " Quota
     read -p "Limit User (IP): " iplim
     exp=$(grep -wE "^#& $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-    mkdir -p /etc/cybervpn/limit/vless/ip
-echo $iplim > /etc/cybervpn/limit/vless/ip/${user}
+    mkdir -p /etc/mousevpn/limit/vless/ip
+echo $iplim > /etc/mousevpn/limit/vless/ip/${user}
 if [ ! -e /etc/vless/ ]; then
   mkdir -p /etc/vless/
  touch /etc/vless/$user

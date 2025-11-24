@@ -11,17 +11,17 @@ exit 0
 fi
 
 #install
-cp /media/cybervpn/var.txt /tmp
-cp /root/cybervpn/var.txt /tmp
+cp /media/mousevpn/var.txt /tmp
+cp /root/mousevpn/var.txt /tmp
 rm -rf cybervpn
 apt update && apt upgrade -y
 apt install python3 python3-pip -y
 apt install sqlite3 -y
 cd /media/
-rm -rf cybervpn
-wget https://raw.githubusercontent.com/mousethain/tahu/main/botssh/cybervpn.zip
-unzip cybervpn.zip
-cd cybervpn
+rm -rf mousevpn
+wget https://raw.githubusercontent.com/mousethain/tahu/main/botssh/mousevpn.zip
+unzip mousevpn.zip
+cd mousevpn
 rm var.txt
 rm database.db
 pip3 install -r requirements.txt
@@ -32,9 +32,9 @@ pip3 install paramiko
 
 
 
-cat > /etc/systemd/system/cybervpn.service << END
+cat > /etc/systemd/system/mousevpn.service << END
 [Unit]
-Description=Simple CyberVPN - @CyberVPN
+Description=Simple MouseVpn - @MouseVpn
 After=network.target
 
 [Service]
@@ -47,8 +47,8 @@ WantedBy=multi-user.target
 
 END
 systemctl daemon-reload
-systemctl start cybervpn
-systemctl enable cybervpn
+systemctl start mousevpn
+systemctl enable mousevpn
 
 clear
 echo "downloading asset"
@@ -134,8 +134,8 @@ wget -q -O /usr/bin/cek-mss "https://raw.githubusercontent.com/mousethain/tahu/m
 
 wget -q -O /usr/bin/cek-mts "https://raw.githubusercontent.com/mousethain/tahu/main/botssh/cek-mts.sh" && chmod +x /usr/bin/cek-mts
 
-cp /tmp/var.txt /media/cybervpn
+cp /tmp/var.txt /media/mousevpn
 
 echo " Installations complete, type /menu on your bot "
 
-rm /media/cybervpn.zip
+rm /media/mousevpn.zip

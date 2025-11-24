@@ -36,7 +36,7 @@ echo ""
     echo -e ""
     echo -e "${blue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     exit 0
-systemctl restart cybervpn
+systemctl restart mousevpn
   fi
 done
 

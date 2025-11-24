@@ -26,11 +26,11 @@ done
 sleep 0.5
 mulog=$(cat .data)
 tanggal=$(date)
-data=( $(ls /etc/cybervpn/limit/ssh/ip) )
+data=( $(ls /etc/mousevpn/limit/ssh/ip) )
 
 for user in "${data[@]}"
 do
-    nilai=$(cat "/etc/cybervpn/limit/ssh/ip/$user")
+    nilai=$(cat "/etc/mousevpn/limit/ssh/ip/$user")
     
 iplimit=$((nilai++))
     cekcek=$(echo -e "$mulog" | grep "$user" | wc -l)

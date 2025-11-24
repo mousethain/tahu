@@ -202,7 +202,7 @@ wget -q -O /usr/bin/service-trial "https://raw.githubusercontent.com/mousethain/
 
 cat >/etc/systemd/system/trial.service << EOF
 [Unit]
-Description=PT.cybervpn ltd.
+Description=PT.mousevpn ltd.
 ProjectAfter=network.target
 
 [Service]
@@ -224,10 +224,10 @@ mkdir /tmp/vmess
 mkdir /tmp/vless
 mkdir /tmp/trojan
 
-mkdir -p /etc/cybervpn/limit/vmess/ip/
-mkdir -p /etc/cybervpn/limit/vless/ip/
-mkdir -p /etc/cybervpn/limit/trojan/ip/
-mkdir -p /etc/cybervpn/limit/ssh/ip/
+mkdir -p /etc/mousevpn/limit/vmess/ip/
+mkdir -p /etc/mousevpn/limit/vless/ip/
+mkdir -p /etc/mousevpn/limit/trojan/ip/
+mkdir -p /etc/mousevpn/limit/ssh/ip/
 
 chmod 777 /root/chat
 chmod 777 /usr/bin/bot

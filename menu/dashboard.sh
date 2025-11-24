@@ -49,18 +49,6 @@ export Server_IP="underfined"
 export Script_Mode="Stable"
 export Auther="XdrgVPN"
 # Getting
-echo "sedang memverifkasi"
-MYIP=$(wget -qO- ipinfo.io/ip);
-CEKEXPIRED () {
-    today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $3}')
-    if [[ $today < $Exp1 ]]; then
-echo -e "verifikasi IP di terima"
-    else
-echo -e "\e[31manda di tolak!\e[0m"
-    exit 
-fi
-}
 
 if [ ! -e /tmp/trojan ]; then
   mkdir -p /tmp/trojan

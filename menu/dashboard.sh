@@ -98,8 +98,8 @@ left=$(((d1 - d2) / 86400))
 
 
  
-rm cybervpn.zip
-rm -rf cybervpn.zip
+rm mousevpn.zip
+rm -rf mousevpn.zip
 
 datediff() {
     d1=$(date -d "$1" +%s)

@@ -38,7 +38,7 @@ echo ""
     echo -e ""
     echo -e "${blue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     exit 0
-systemctl restart cybervpn
+systemctl restart mousevpn
   fi
 done
 
@@ -225,7 +225,7 @@ fi
 status="UNLOCKED"
 echo "### ${user} ${expe} ${status} ${uuid} ${Quota}" >>/etc/vmess/.vmess.db
 
-echo "### ${user} ${exp}" >>/etc/rizkihdyt/ws
+echo "### ${user} ${exp}" >>/etc/mousevpn/ws
 
 clear
 echo -e "${blue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

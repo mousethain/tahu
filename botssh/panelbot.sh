@@ -8,13 +8,13 @@ export CYAN='\033[0;36m'
 export LIGHT='\033[0;37m'
 export NC='\033[0m'
 
-cybervpn_service=$(systemctl status cybervpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+mousevpn_service=$(systemctl status mousevpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 # STATUS SERVICE  SQUID 
-if [[ $cybervpn_service == "running" ]]; then 
-   status_cybervpn=" ${GREEN}Running ${NC}"
+if [[ $mousevpn_service == "running" ]]; then 
+   status_mousevpn=" ${GREEN}Running ${NC}"
 else
-   status_cybervpn="${RED}  Not Running ${NC}"
+   status_mousevpn="${RED}  Not Running ${NC}"
 fi
 clear
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

@@ -24,7 +24,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
     echo ""
     echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     exit 0
-systemctl restart cybervpn
+systemctl restart mousevpn
   fi
 done
 uuid=$(cat /proc/sys/kernel/random/uuid)

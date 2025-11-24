@@ -32,7 +32,7 @@ read -p "Expired (days): " masaaktif
 read -p "Limit User (GB): " Quota
 read -p "Limit User (ip): " ip
 
-echo $ip > /etc/cybervpn/limit/vless/ip/${user}
+echo $ip > /etc/mousevpn/limit/vless/ip/${user}
 
 #read -p "     Limit User (IP)  : " iplim
 tgl=$(date -d "$masaaktif days" +"%d")

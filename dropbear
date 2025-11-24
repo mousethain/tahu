@@ -9,7 +9,7 @@ DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69"
 
 # specify an optional banner file containing a message to be
 # sent to clients before they connect, such as "/etc/issue.net"
-DROPBEAR_BANNER="/etc/cyber.site"
+DROPBEAR_BANNER="/etc/mousevpn.site"
 
 # RSA hostkey file (default: /etc/dropbear/dropbear_rsa_host_key)
 #DROPBEAR_RSAKEY="/etc/dropbear/dropbear_rsa_host_key"

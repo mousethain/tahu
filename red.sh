@@ -91,7 +91,7 @@ wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com
 if [ -z "$1" ]; then
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
-Description=udp-custom by ©CyberVPN
+Description=udp-custom by ©MouseVpn
 [Service]
 User=root
 Type=simple
@@ -105,7 +105,7 @@ EOF
 else
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
-Description=udp-custom by ©CyberVPN
+Description=udp-custom by ©MouseVpn
 [Service]
 User=root
 Type=simple

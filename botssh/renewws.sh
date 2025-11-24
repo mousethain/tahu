@@ -17,8 +17,8 @@ read -rp "Input Username : " user
     read -p "Limit User (GB): " Quota
     read -p "Limit User (IP): " iplimit
     exp=$(grep -wE "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-    mkdir -p /etc/cybervpn/limit/vmess/ip
-echo $iplimit > /etc/cybervpn/limit/vmess/ip/${user}
+    mkdir -p /etc/mousevpn/limit/vmess/ip
+echo $iplimit > /etc/mousevpn/limit/vmess/ip/${user}
 
 if [ ! -e /etc/vmess/ ]; then
   mkdir -p /etc/vmess/

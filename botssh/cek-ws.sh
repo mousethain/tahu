@@ -41,7 +41,7 @@ jum=$(cat /tmp/ipvmess.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/cybervpn/limit/vmess/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/vmess/ip/${akun})
 jum2=$(cat /tmp/ipvmess.txt | wc -l)
 byte=$(cat /etc/vmess/${akun})
 lim=$(con ${byte})

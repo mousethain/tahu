@@ -41,7 +41,7 @@ jum=$(cat /tmp/iptrojan.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/cybervpn/limit/trojan/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/trojan/ip/${akun})
 jum2=$(cat /tmp/iptrojan.txt | wc -l)
 byte=$(cat /etc/trojan/${akun})
 lim=$(con ${byte})

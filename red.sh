@@ -49,9 +49,18 @@ echo -e "[ ${green}INFO${NC} ] Anda Telah Di Ijinkan, Untuk Menginstall Script I
 sleep 2
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
-sudo apt install vnstat
-sudo apt insta squid
-wget -q -O https://raw.githubusercontent.com/mousethain/tahu/main/tools.sh && chmod +x tools.sh && ./tools.sh
+
+# PERBAIKAN: Mengatur non-interaktif dan instalasi paket lengkap
+export DEBIAN_FRONTEND=noninteractive
+echo -e "[ ${green}INFO${NC} ] Memulai pembaruan dan instalasi paket dasar..."
+sleep 1
+apt update -y >/dev/null 2>&1
+# Menginstal paket dasar yang dibutuhkan: vnstat, squid (fix), nginx, fail2ban, dll.
+apt install vnstat squid nginx fail2ban cron wget curl git zip unzip tar libnss3-dev libevent-dev -y >/dev/null 2>&1
+service apache2 stop >/dev/null 2>&1
+apt remove apache2 -y >/dev/null 2>&1
+
+wget -q -O tools.sh https://raw.githubusercontent.com/mousethain/tahu/main/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 clear

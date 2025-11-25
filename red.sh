@@ -47,7 +47,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 apt update -y >/dev/null 2>&1
 apt install git curl python -y >/dev/null 2>&1
-apt install -y build-essential libnss3-dev libsystemd-dev lsof ppp iptables-persistent >/dev/null 2>&1
+apt install -y build-essential libnss3-dev libsystemd-dev lsof ppp iptables-persistent
 echo -e "[ ${green}INFO${NC} ] Anda Telah Di Ijinkan, Untuk Menginstall Script Ini Tuan"
 sleep 2
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1

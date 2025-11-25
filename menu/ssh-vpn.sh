@@ -15,9 +15,9 @@ country=ID
 state=Indonesia
 locality=none
 organization=AnonymouseID
-organizationalunit=CYBERVPN
+organizationalunit=MOUSEVPN
 commonname=none
-email=cybervpn@azigaming404.com
+email=Mouse@mousevpn.my.id
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/mousethain/tahu/main/Insshws/password.txt"
@@ -302,7 +302,7 @@ if [ ! -d "$DESTDIR/var/lib/ddos" ]; then
     mkdir -p "$DESTDIR/var/lib/ddos"
 fi
 
-echo; echo 'Installing DDOS-protevtion v.10 by Cybervpn'; echo
+echo; echo 'Installing DDOS-protevtion v.10 by Mousevpn'; echo
 
 if [ ! -e "$DESTDIR/etc/ddos/ddos.conf" ]; then
     echo -n 'Adding: /etc/ddos/ddos.conf...'
@@ -429,10 +429,10 @@ exit 0
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/mousethain/tahu/main/issue.net"
-chmod +x /etc/cyber.site
-echo "Banner /etc/cyber.site" >> /etc/ssh/sshd_config
-sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/cyber.site"@g' /etc/default/dropbear
+wget -q -O /etc/mousevpn.site "https://raw.githubusercontent.com/mousethain/tahu/main/issue.net"
+chmod +x /etc/mousevpn.site
+echo "Banner /etc/mousevpn.site" >> /etc/ssh/sshd_config
+sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/mousevpn.site"@g' /etc/default/dropbear
 
 
 #install bbr dan optimasi kernel
@@ -630,14 +630,14 @@ dpkg-reconfigure iptables-persistent
 
 systemctl restart fail2ban
 
-mkdir /etc/cybervpn/
-mkdir /etc/cybervpn/limit/
-mkdir /etc/cybervpn/limit/vmess
-mkdir /etc/cybervpn/limit/trojan
-mkdir /etc/cybervpn/limit/vless
-mkdir /etc/cybervpn/limit/vmess/ip
-mkdir /etc/cybervpn/limit/trojan/ip
-mkdir /etc/cybervpn/limit/vless/ip
+mkdir /etc/mousevpn/
+mkdir /etc/mousevpn/limit/
+mkdir /etc/mousevpn/limit/vmess
+mkdir /etc/mousevpn/limit/trojan
+mkdir /etc/mousevpn/limit/vless
+mkdir /etc/mousevpn/limit/vmess/ip
+mkdir /etc/mousevpn/limit/trojan/ip
+mkdir /etc/mousevpn/limit/vless/ip
 mkdir /tmp/vless/
 mkdir /tmp/vmess/
 mkdir /tmp/trojan/

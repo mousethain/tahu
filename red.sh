@@ -47,14 +47,12 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 apt update -y >/dev/null 2>&1
 apt install git curl python -y >/dev/null 2>&1
-# FIX KRITIS: Dependensi Build IPsec (Mencegah ABRT) & Interaktif (iptables-persistent)
 apt install -y build-essential libnss3-dev libsystemd-dev lsof ppp iptables-persistent >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Anda Telah Di Ijinkan, Untuk Menginstall Script Ini Tuan"
 sleep 2
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 sudo apt install vnstat -y >/dev/null 2>&1
-# FIX KRITIS: Perbaiki typo 'insta' menjadi 'install'
 sudo apt install squid -y >/dev/null 2>&1
 wget -q -O tools.sh https://raw.githubusercontent.com/mousethain/tahu/main/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
@@ -96,7 +94,7 @@ wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com
 if [ -z "$1" ]; then
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
-Description=udp-custom by ©CyberVPN
+Description=udp-custom by ©Mousevpn 
 [Service]
 User=root
 Type=simple
@@ -110,7 +108,7 @@ EOF
 else
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
-Description=udp-custom by ©CyberVPN
+Description=udp-custom by ©Mousevpn
 [Service]
 User=root
 Type=simple
@@ -164,7 +162,6 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install IPSEC L2TP & SSTP               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 1
-# FIX KRITIS: Menambahkan pembuatan direktori L2TP/PPTP
 mkdir -p /var/lib/crot
 curl "https://raw.githubusercontent.com/mousethain/tahu/main/ipsec/ipsec.sh" | bash
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"

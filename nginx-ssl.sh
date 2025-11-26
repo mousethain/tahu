@@ -7,20 +7,18 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 
-echo -e "
-"
+echo -e "\n"
 date
 echo ""
 
 # ==========================================
-      LOGIKA PENCARIAN DOMAIN OTOMATIS
+#     LOGIKA PENCARIAN DOMAIN OTOMATIS     #
 # ==========================================
 echo -e "[ ${GREEN}INFO${NC} ] Mencari file domain..."
 
-mkdir -p /etc/xray
-mkdir -p /etc/v2ray
+mkdir -p /etc/xray /etc/v2ray
 
-# Cari domain di beberapa lokasi, jika tidak ada, minta input
+# Cari domain di beberapa lokasi
 if [ -f "/root/domain" ]; then
     domain=$(cat /root/domain)
 elif [ -f "/etc/xray/domain" ]; then
@@ -30,8 +28,7 @@ elif [ -f "/etc/v2ray/domain" ]; then
     domain=$(cat /etc/v2ray/domain)
     cp /etc/v2ray/domain /root/domain
 else
-    echo -e "[ ${ORANGE}WARNING${NC} ] File domain tidak ditemukan di lokasi standar."
-    echo -e "[ ${ORANGE}ACTION${NC} ] Silakan masukkan domain Anda sekarang."
+    echo -e "[ ${ORANGE}WARNING${NC} ] File domain tidak ditemukan. Meminta input domain..."
     read -rp "Input Domain : " domain
     echo "$domain" > /root/domain
     echo "$domain" > /etc/xray/domain
@@ -47,17 +44,15 @@ echo -e "[ ${GREEN}INFO${NC} ] Domain terdeteksi: ${ORANGE}$domain${NC}"
 sleep 1
 
 # ==========================================
-             INSTALASI PAKET
+#             INSTALASI PAKET 
 # ==========================================
 echo -e "[ ${GREEN}INFO${NC} ] Checking & Installing base packages"
 
-# --- PERBAIKAN KRITIS: Mengganti mirror APT yang expired ---
-echo -e "[ ${GREEN}INFO${NC} ] Memperbaiki Mirror Repository yang kedaluwarsa (nevacloud -> deb.debian.org)..."
+echo -e "[ ${GREEN}INFO${NC} ] Memperbaiki Mirror Repository yang kedaluwarsa..."
 sed -i 's|http://mirror.nevacloud.com/debian|http://deb.debian.org/debian|g' /etc/apt/sources.list
 sed -i 's|http://security.debian.org/debian-security|http://deb.debian.org/debian-security|g' /etc/apt/sources.list
-# --- AKHIR PERBAIKAN MIRROR ---
 
-# Menjalankan update dan instalasi paket asli
+# update dan instalasi paket asli
 apt clean all && apt update -y
 apt install iptables iptables-persistent -y
 sleep 1
@@ -68,13 +63,10 @@ ntpdate pool.ntp.org
 timedatectl set-ntp true
 sleep 1
 
-echo -e "[ ${GREEN}INFO${NC} ] Enable chronyd"
+echo -e "[ ${GREEN}INFO${NC} ] Enable chronyd & chrony"
 apt install chrony -y
 systemctl enable chronyd
 systemctl restart chronyd
-sleep 1
-
-echo -e "[ ${GREEN}INFO${NC} ] Enable chrony"
 systemctl enable chrony
 systemctl restart chrony
 timedatectl set-timezone Asia/Jakarta
@@ -84,27 +76,30 @@ echo -e "[ ${GREEN}INFO${NC} ] Setting chrony tracking"
 chronyc sourcestats -v
 chronyc tracking -v
 
-echo -e "[ ${GREEN}INFO${NC} ] Setting dll & Dependencies"
+echo -e "[ ${GREEN}INFO${NC} ] Installing Dependencies"
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
 apt install zip curl pwgen openssl netcat cron -y
 
 # ==========================================
-               INSTALASI SSL
+#             INSTALASI SSL 
 # ==========================================
 echo -e "[ ${GREEN}INFO${NC} ] Memulai Instalasi SSL untuk $domain"
 
 systemctl stop nginx
+
+# --- Buka Port 80 & 443
+echo -e "[ ${GREEN}INFO${NC} ] Membuka Port 80 & 443 (iptables) untuk verifikasi SSL..."
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+iptables-save > /etc/iptables/rules.v4 
+
 mkdir -p /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-
-# Issue Sertifikat
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --force
-
-# Install Sertifikat ke folder Xray
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 
 # Setup Auto-Renew SSL
@@ -120,7 +115,7 @@ if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo 
 mkdir -p /home/vps/public_html
 
 # ==========================================
-             KONFIGURASI NGINX
+#              KONFIGURASI NGINX
 # ==========================================
 echo -e "[ ${GREEN}INFO${NC} ] Membuat Konfigurasi Nginx..."
 
@@ -152,7 +147,7 @@ sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
 # ==========================================
-           RESTART SERVICE
+#               RESTART SERVICE
 # ==========================================
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
@@ -161,8 +156,6 @@ echo -e "[ ${GREEN}ok${NC} ] Enable & restart xray "
 systemctl restart nginx
 systemctl enable runn
 systemctl restart runn
-
-# Backup domain ke folder xray
 cp /root/domain /etc/xray/domain
 
 if [ -f /root/scdomain ];then

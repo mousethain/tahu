@@ -1,51 +1,64 @@
 #!/bin/bash
 # Script Auto Install SSL & Nginx Config
 
-# Warna untuk output
+# Warna
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
 
 echo -e "
 "
 date
 echo ""
 
-# ==========================================================
-                         CEK DOMAIN
-# ==========================================================
-mkdir -p /root/
-if [ ! -f /root/domain ]; then
-    echo -e "[ ${RED}ERROR${NC} ] File /root/domain tidak ditemukan."
-    echo -e "[ ${GREEN}INFO${NC} ] Mencari di folder backup..."
-    # Coba cari di folder lain jika ada
-    if [ -f "/etc/xray/domain" ]; then
-        cp /etc/xray/domain /root/domain
-    elif [ -f "/etc/v2ray/domain" ]; then
-        cp /etc/v2ray/domain /root/domain
-    else
-        echo -e "[ ${RED}FATAL${NC} ] Domain tidak ditemukan. Harap buat file /root/domain isinya domain anda."
-        exit 1
-    fi
+# ==========================================
+      LOGIKA PENCARIAN DOMAIN OTOMATIS
+# ==========================================
+echo -e "[ ${GREEN}INFO${NC} ] Mencari file domain..."
+
+mkdir -p /etc/xray
+mkdir -p /etc/v2ray
+
+# Cari domain di beberapa lokasi, jika tidak ada, minta input
+if [ -f "/root/domain" ]; then
+    domain=$(cat /root/domain)
+elif [ -f "/etc/xray/domain" ]; then
+    domain=$(cat /etc/xray/domain)
+    cp /etc/xray/domain /root/domain
+elif [ -f "/etc/v2ray/domain" ]; then
+    domain=$(cat /etc/v2ray/domain)
+    cp /etc/v2ray/domain /root/domain
+else
+    echo -e "[ ${ORANGE}WARNING${NC} ] File domain tidak ditemukan di lokasi standar."
+    echo -e "[ ${ORANGE}ACTION${NC} ] Silakan masukkan domain Anda sekarang."
+    read -rp "Input Domain : " domain
+    echo "$domain" > /root/domain
+    echo "$domain" > /etc/xray/domain
 fi
 
-domain=$(cat /root/domain)
-sleep 1
-mkdir -p /etc/xray 
+# Validasi akhir
+if [ -z "$domain" ]; then
+    echo -e "[ ${RED}ERROR${NC} ] Domain tidak boleh kosong!"
+    exit 1
+fi
 
-# ==========================================================
-                  PERBAIKAN REPOSITORI APT
-# ==========================================================
-echo -e "[ ${GREEN}INFO${NC} ] Memperbaiki Mirror Repository..."
+echo -e "[ ${GREEN}INFO${NC} ] Domain terdeteksi: ${ORANGE}$domain${NC}"
+sleep 1
+
+# ==========================================
+             INSTALASI PAKET
+# ==========================================
+echo -e "[ ${GREEN}INFO${NC} ] Checking & Installing base packages"
+
+# --- PERBAIKAN KRITIS: Mengganti mirror APT yang expired ---
+echo -e "[ ${GREEN}INFO${NC} ] Memperbaiki Mirror Repository yang kedaluwarsa (nevacloud -> deb.debian.org)..."
 sed -i 's|http://mirror.nevacloud.com/debian|http://deb.debian.org/debian|g' /etc/apt/sources.list
 sed -i 's|http://security.debian.org/debian-security|http://deb.debian.org/debian-security|g' /etc/apt/sources.list
+# --- AKHIR PERBAIKAN MIRROR ---
 
-echo -e "[ ${GREEN}INFO${NC} ] Checking & Updating..."
+# Menjalankan update dan instalasi paket asli
 apt clean all && apt update -y
-
-# ==========================================================
-                     INSTALASI PAKET
-# ==========================================================
 apt install iptables iptables-persistent -y
 sleep 1
 
@@ -76,19 +89,25 @@ apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dns
 apt install socat cron bash-completion ntpdate -y
 apt install zip curl pwgen openssl netcat cron -y
 
-# ==========================================================
-                       INSTALASI SSL 
-# ==========================================================
+# ==========================================
+               INSTALASI SSL
+# ==========================================
+echo -e "[ ${GREEN}INFO${NC} ] Memulai Instalasi SSL untuk $domain"
+
 systemctl stop nginx
 mkdir -p /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+
+# Issue Sertifikat
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --force
+
+# Install Sertifikat ke folder Xray
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 
-# nginx renew ssl
+# Setup Auto-Renew SSL
 echo -n '#!/bin/bash
 /etc/init.d/nginx stop
 "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" &> /root/renew_ssl.log
@@ -100,9 +119,11 @@ if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo 
 
 mkdir -p /home/vps/public_html
 
-# ==========================================================
-                      KONFIGURASI NGINX
-# ==========================================================
+# ==========================================
+             KONFIGURASI NGINX
+# ==========================================
+echo -e "[ ${GREEN}INFO${NC} ] Membuat Konfigurasi Nginx..."
+
 cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
@@ -130,6 +151,9 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
+# ==========================================
+           RESTART SERVICE
+# ==========================================
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
 sleep 1
@@ -138,12 +162,7 @@ systemctl restart nginx
 systemctl enable runn
 systemctl restart runn
 
-sleep 1
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-yellow "xray/Vmess"
-yellow "xray/Vless"
-
-# Backup domain ke folder xray untuk jaga-jaga
+# Backup domain ke folder xray
 cp /root/domain /etc/xray/domain
 
 if [ -f /root/scdomain ];then

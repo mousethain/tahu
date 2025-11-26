@@ -10,7 +10,7 @@ echo "memeriksa vps anda"
 sleep 0.5
 
 CEKEXPIRED () {
-today=$(date -d +1day +%Y -m -%d)
+today=$(date -d "+1 day" "+%Y-%m-%d")
 Exp1=$(curl -sS https://raw.githubusercontent.com/mousethain/tahu/main/gerung | grep $MYIP | awk '{print $3}')
 if [[ $today < $Exp1 ]]; then
 echo "status script aktif.."

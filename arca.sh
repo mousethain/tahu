@@ -204,7 +204,7 @@ mkdir -p /etc/ssnvpn/theme/
 touch /etc/ssnvpn/theme/color.conf
 touch /root/limit/rulesxray.txt
 
-# Permissions Final check (just in case)
+# Permissions Final check
 chmod 777 /root/chat
 chmod 777 /usr/bin/bot
 chmod 777 /usr/bin/addudp

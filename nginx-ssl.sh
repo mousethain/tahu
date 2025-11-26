@@ -1,47 +1,91 @@
 #!/bin/bash
+# Script Auto Install SSL & Nginx Config
+
+# Warna untuk output
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+
 echo -e "
 "
 date
 echo ""
+
+# ==========================================================
+                         CEK DOMAIN
+# ==========================================================
+mkdir -p /root/
+if [ ! -f /root/domain ]; then
+    echo -e "[ ${RED}ERROR${NC} ] File /root/domain tidak ditemukan."
+    echo -e "[ ${GREEN}INFO${NC} ] Mencari di folder backup..."
+    # Coba cari di folder lain jika ada
+    if [ -f "/etc/xray/domain" ]; then
+        cp /etc/xray/domain /root/domain
+    elif [ -f "/etc/v2ray/domain" ]; then
+        cp /etc/v2ray/domain /root/domain
+    else
+        echo -e "[ ${RED}FATAL${NC} ] Domain tidak ditemukan. Harap buat file /root/domain isinya domain anda."
+        exit 1
+    fi
+fi
+
 domain=$(cat /root/domain)
 sleep 1
 mkdir -p /etc/xray 
-echo -e "[ ${green}INFO${NC} ] Checking... "
+
+# ==========================================================
+                  PERBAIKAN REPOSITORI APT
+# ==========================================================
+echo -e "[ ${GREEN}INFO${NC} ] Memperbaiki Mirror Repository..."
+sed -i 's|http://mirror.nevacloud.com/debian|http://deb.debian.org/debian|g' /etc/apt/sources.list
+sed -i 's|http://security.debian.org/debian-security|http://deb.debian.org/debian-security|g' /etc/apt/sources.list
+
+echo -e "[ ${GREEN}INFO${NC} ] Checking & Updating..."
+apt clean all && apt update -y
+
+# ==========================================================
+                     INSTALASI PAKET
+# ==========================================================
 apt install iptables iptables-persistent -y
 sleep 1
-echo -e "[ ${green}INFO$NC ] Setting ntpdate"
+
+echo -e "[ ${GREEN}INFO${NC} ] Setting ntpdate"
+apt install ntpdate -y
 ntpdate pool.ntp.org 
 timedatectl set-ntp true
 sleep 1
-echo -e "[ ${green}INFO$NC ] Enable chronyd"
+
+echo -e "[ ${GREEN}INFO${NC} ] Enable chronyd"
+apt install chrony -y
 systemctl enable chronyd
 systemctl restart chronyd
 sleep 1
-echo -e "[ ${green}INFO$NC ] Enable chrony"
+
+echo -e "[ ${GREEN}INFO${NC} ] Enable chrony"
 systemctl enable chrony
 systemctl restart chrony
 timedatectl set-timezone Asia/Jakarta
 sleep 1
-echo -e "[ ${green}INFO$NC ] Setting chrony tracking"
+
+echo -e "[ ${GREEN}INFO${NC} ] Setting chrony tracking"
 chronyc sourcestats -v
 chronyc tracking -v
-echo -e "[ ${green}INFO$NC ] Setting dll"
-apt clean all && apt update
+
+echo -e "[ ${GREEN}INFO${NC} ] Setting dll & Dependencies"
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
-ntpdate pool.ntp.org
-apt -y install chrony
-apt install zip -y
-apt install curl pwgen openssl netcat cron -y
+apt install zip curl pwgen openssl netcat cron -y
 
-## crt xray
+# ==========================================================
+                       INSTALASI SSL 
+# ==========================================================
 systemctl stop nginx
-mkdir /root/.acme.sh
+mkdir -p /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 --force
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 
 # nginx renew ssl
@@ -56,7 +100,9 @@ if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo 
 
 mkdir -p /home/vps/public_html
 
-#nginx config
+# ==========================================================
+                      KONFIGURASI NGINX
+# ==========================================================
 cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
@@ -87,8 +133,7 @@ sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
 sleep 1
-echo -e "[ ${green}ok${NC} ] Enable & restart xray "
-systemctl daemin-reload
+echo -e "[ ${GREEN}ok${NC} ] Enable & restart xray "
 systemctl restart nginx
 systemctl enable runn
 systemctl restart runn
@@ -98,7 +143,9 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "xray/Vmess"
 yellow "xray/Vless"
 
-mv /root/domain /etc/xray/ 
+# Backup domain ke folder xray untuk jaga-jaga
+cp /root/domain /etc/xray/domain
+
 if [ -f /root/scdomain ];then
 rm /root/scdomain > /dev/null 2>&1
 fi

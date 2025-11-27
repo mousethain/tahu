@@ -50,10 +50,10 @@ read -p "Password: " pass
 read -p "Exp (0 for unlimited days):" exp
 read -p "IP LIMIT " ip
 
-if [ ! -e /etc/cybervpn/limit/noobs/ip/ ]; then
-  mkdir -p /etc/cybervpn/limit/noobs/ip/
+if [ ! -e /etc/mousevpn/limit/noobs/ip/ ]; then
+  mkdir -p /etc/mousevpn/limit/noobs/ip/
 fi
-echo "$ip" > /etc/cybervpn/limit/noobs/ip/$user
+echo "$ip" > /etc/mousevpn/limit/noobs/ip/$user
 
 noobzvpns --add-user $user $pass --expired-user $user $exp
 

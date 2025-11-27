@@ -419,13 +419,13 @@ read -p "${BIWhite}Expired days: " masaaktif
 read -p "${BIWhite}IP LIMIT: " max
 
 
-if [ "$max" -eq 1 ]; then
-    echo "minimal limit ip 1"
+if [ "$max" -eq 2 ]; then
+    echo "minimal limit ip 2"
     exit 0
 fi
 
 
-echo "$max" >/etc/cybervpn/limit/ssh/ip/$Login
+echo "$max" >/etc/mousevpn/limit/ssh/ip/$Login
 
 
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login

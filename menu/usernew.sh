@@ -33,7 +33,7 @@ if [ "$max" -eq 1 ]; then
 echo "minimal limit ip 2"
 exit 0
 fi
-echo "$max" >/etc/cybervpn/limit/ssh/ip/$Login
+echo "$max" >/etc/mousevpn/limit/ssh/ip/$Login
 IP=$(wget -qO- ipinfo.io/ip);
 ws="$(cat ~/log-install.txt | grep -w "Websocket TLS" | cut -d: -f2|sed 's/ //g')"
 ws2="$(cat ~/log-install.txt | grep -w "Websocket None TLS" | cut -d: -f2|sed 's/ //g')"

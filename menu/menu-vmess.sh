@@ -93,7 +93,7 @@ data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 2 | sort | uniq`)
 for akun in "${data[@]}"
 do
 exp=$(grep -wE "^### $akun" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-iplimit=$(cat /etc/cybervpn/limit/vmess/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/vmess/ip/${akun})
 byte=$(cat /etc/vmess/${akun})
 lim=$(con ${byte})
 wey=$(cat /etc/limit/vmess/${akun})
@@ -303,13 +303,13 @@ if [ -z $user ]; then
 menu-vmess
 else
 read -p "Expired (days): " masaaktif
-rm -f /etc/cybervpn/limit/vmess/ip/${user}
+rm -f /etc/mousevpn/limit/vmess/ip/${user}
 rm -f /etc/vmess/$user
 read -p "Limit User (GB): " Quota
 read -p "Limit User (IP): " iplimit
 exp=$(grep -wE "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-mkdir -p /etc/cybervpn/limit/vmess/ip
-echo $iplimit > /etc/cybervpn/limit/vmess/ip/${user}
+mkdir -p /etc/mousevpn/limit/vmess/ip
+echo $iplimit > /etc/mousevpn/limit/vmess/ip/${user}
 if [ ! -e /etc/vmess/ ]; then
 mkdir -p /etc/vmess/
 fi
@@ -395,7 +395,7 @@ jum=$(cat /tmp/ipvmess.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/cybervpn/limit/vmess/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/vmess/ip/${akun})
 jum2=$(cat /tmp/ipvmess.txt | wc -l)
 byte=$(cat /etc/vmess/${akun})
 lim=$(con ${byte})
@@ -436,7 +436,7 @@ mkdir -p "$folder"
 else
 echo ""
 fi
-echo $iplimit > /etc/cybervpn/limit/vmess/ip/${user}
+echo $iplimit > /etc/mousevpn/limit/vmess/ip/${user}
 if [ -z $user ]; then
 echo -e "$COLOR1│${NC} [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"

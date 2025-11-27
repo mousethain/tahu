@@ -48,7 +48,7 @@ wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/mousethain/tahu/
 wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/genssl.sh"
 wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/cf.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/update.sh"
-wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/mousethain/tahu/main/cyber.site"
+wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/mousethain/tahu/main/mousevpn.site"
 wget -q -O /root/versi "https://raw.githubusercontent.com/mousethain/tahu/main/versiupdate"
 wget -q -O /usr/bin/updatsc "https://raw.githubusercontent.com/mousethain/tahu/main/menu/update.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu-backup.sh"
@@ -144,7 +144,7 @@ systemctl restart xp
 
 cat >/etc/systemd/system/tendang.service << EOF
 [Unit]
-Description=PT.cybervpn ltd.
+Description=PT.mousevpn ltd.
 ProjectAfter=network.target
 
 [Service]
@@ -166,7 +166,7 @@ wget -q -O /usr/bin/limitipxray "https://raw.githubusercontent.com/mousethain/ta
 
 cat >/etc/systemd/system/iplimit.service << EOF
 [Unit]
-Description=PT.cybervpn ltd.
+Description=PT.mousevpn ltd.
 ProjectAfter=network.target
 
 [Service]
@@ -202,7 +202,7 @@ wget -q -O /usr/bin/service-trial "https://raw.githubusercontent.com/mousethain/
 
 cat >/etc/systemd/system/trial.service << EOF
 [Unit]
-Description=PT.cybervpn ltd.
+Description=PT.mousevpn ltd.
 ProjectAfter=network.target
 
 [Service]
@@ -223,11 +223,17 @@ systemctl restart trial
 mkdir /tmp/vmess
 mkdir /tmp/vless
 mkdir /tmp/trojan
+mkdir /tmp/ssh
 
+mkdir -p /etc/mousevpn/limit/vmess/ip/
+mkdir -p /etc/mousevpn/limit/vless/ip/
+mkdir -p /etc/mousevpn/limit/trojan/ip/
+mkdir -p /etc/mousevpn/limit/ssh/ip/
 mkdir -p /etc/cybervpn/limit/vmess/ip/
 mkdir -p /etc/cybervpn/limit/vless/ip/
 mkdir -p /etc/cybervpn/limit/trojan/ip/
 mkdir -p /etc/cybervpn/limit/ssh/ip/
+
 
 chmod 777 /root/chat
 chmod 777 /usr/bin/bot

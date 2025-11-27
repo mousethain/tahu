@@ -32,7 +32,7 @@ export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-NET=$(ip route list | awk '/default/ {print $5}' | head -n 1);
+NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 
 # Install OpenVPN dan Easy-RSA
 apt install openvpn easy-rsa unzip -y

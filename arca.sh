@@ -8,7 +8,7 @@ wget -q -O /root/status "https://raw.githubusercontent.com/mousethain/tahu/main/
 
 wget -q -O /etc/version "https://raw.githubusercontent.com/mousethain/tahu/main/versiupdate" && chmod +x /etc/version
 
-#wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu.sh"
 wget -q -O /usr/bin/menu1 "https://raw.githubusercontent.com/mousethain/tahu/main/menu/menu1.sh"
 wget -q -O /usr/bin/delv2ray "https://raw.githubusercontent.com/mousethain/tahu/main/menu/delv2ray.sh"
 #wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/mousethain/tahu/main/minacantik/add-ws.sh"

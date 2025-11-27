@@ -91,7 +91,7 @@ jum=$(cat /tmp/ipvless.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/cybervpn/limit/vless/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/vless/ip/${akun})
 jum2=$(cat /tmp/ipvless.txt | wc -l)
 byte=$(cat /etc/vless/${akun})
 lim=$(con ${byte})
@@ -145,14 +145,14 @@ read -rp "Input Username : " user
 if [ -z $user ]; then
 menu
 else
-rm -f /etc/cybervpn/limit/vless/ip/${user}
+rm -f /etc/mousevpn/limit/vless/ip/${user}
 rm -f /etc/vless/$user
 read -p "Expired (days): " masaaktif
 read -p "Limit User (GB): " Quota
 read -p "Limit User (IP): " iplim
 exp=$(grep -wE "^#& $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-mkdir -p /etc/cybervpn/limit/vless/ip
-echo $iplim > /etc/cybervpn/limit/vless/ip/${user}
+mkdir -p /etc/mousevpn/limit/vless/ip
+echo $iplim > /etc/mousevpn/limit/vless/ip/${user}
 if [ ! -e /etc/vless/ ]; then
 mkdir -p /etc/vless/
 fi
@@ -394,7 +394,7 @@ data=( `cat /etc/xray/config.json | grep '#&' | cut -d ' ' -f 2 | sort | uniq`);
 for akun in "${data[@]}"
 do
 exp=$(grep -wE "^#& $akun" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-iplimit=$(cat /etc/cybervpn/limit/vless/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/vless/ip/${akun})
 byte=$(cat /etc/vless/${akun})
 lim=$(con ${byte})
 wey=$(cat /etc/limit/vless/${akun})
@@ -444,13 +444,13 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "  Expired (days): " masaaktif
 read -p "  Limit Quota (GB):" Quota
 read -p "  Limit ip:" iplim
-folder="/etc/cybervpn/limit/vless/ip/"
+folder="/etc/mousevpn/limit/vless/ip/"
 if [ ! -d "$folder" ]; then
 mkdir -p "$folder"
 else
 echo ""
 fi
-echo $iplim > /etc/cybervpn/limit/vless/ip/${user}
+echo $iplim > /etc/mousevpn/limit/vless/ip/${user}
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vless$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json

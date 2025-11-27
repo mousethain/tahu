@@ -93,7 +93,7 @@ jum=$(cat /tmp/iptrojan.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/cybervpn/limit/trojan/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/trojan/ip/${akun})
 jum2=$(cat /tmp/iptrojan.txt | wc -l)
 byte=$(cat /etc/trojan/${akun})
 lim=$(con ${byte})
@@ -308,14 +308,14 @@ read -rp "Input Username : " user
 if [ -z $user ]; then
 menu-trojan
 else
-rm -f /etc/cybervpn/limit/trojan/ip/${user}
+rm -f /etc/mousevpn/limit/trojan/ip/${user}
 rm -f /etc/trojan/$user
 read -p "Expired (days): " masaaktif
 read -p "Limit User (GB): " Quota
 read -p "Limit User (IP): " iplim
 exp=$(grep -wE "^#! $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-mkdir -p /etc/cybervpn/limit/trojan/ip
-echo $iplim > /etc/cybervpn/limit/trojan/ip/${user}
+mkdir -p /etc/mousevpn/limit/trojan/ip
+echo $iplim > /etc/mousevpn/limit/trojan/ip/${user}
 if [ ! -e /etc/trojan ]; then
 mkdir -p /etc/trojan
 fi
@@ -396,7 +396,7 @@ data=( `cat /etc/xray/config.json | grep '#!' | cut -d ' ' -f 2 | sort | uniq`);
 for akun in "${data[@]}"
 do
 exp=$(grep -wE "^#! $akun" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-iplimit=$(cat /etc/cybervpn/limit/trojan/ip/${akun})
+iplimit=$(cat /etc/mousevpn/limit/trojan/ip/${akun})
 byte=$(cat /etc/trojan/${akun})
 lim=$(con ${byte})
 wey=$(cat /etc/limit/trojan/${akun})
@@ -495,7 +495,7 @@ c=$(echo "${Quota}" | sed 's/[^0-9]*//g')
 d=$((${c} * 1024 * 1024 * 1024))
 if [[ ${c} != "0" ]]; then
 echo "${d}" >/etc/trojan/${user}
-echo "$iplimit" > /etc/cybervpn/limit/trojan/ip/${user}
+echo "$iplimit" > /etc/mousevpn/limit/trojan/ip/${user}
 fi
 DATADB=$(cat /etc/trojan/.trojan.db | grep "^#!" | grep -w "${user}" | awk '{print $2}')
 if [[ "${DATADB}" != '' ]]; then
